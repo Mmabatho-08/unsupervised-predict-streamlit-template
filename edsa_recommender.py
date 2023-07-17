@@ -45,7 +45,7 @@ def main():
 
     # DO NOT REMOVE the 'Recommender System' option below, however,
     # you are welcome to add more options to enrich your app.
-    page_options = ["Info", "Recommender System","Solution Overview", "About Us", "EDA"]
+    page_options = ["Home", "Recommender System","Solution Overview", "About Us", "Contact"]
 
     # -------------------------------------------------------------------
     # ----------- !! THIS CODE MUST NOT BE ALTERED !! -------------------
@@ -100,6 +100,25 @@ def main():
     # -------------------------------------------------------------------
 
     # ------------- SAFE FOR ALTERING/EXTENSION -------------------
+
+    #Setting up theme
+    def set_theme():
+    # Define your custom theme settings
+     theme_config = {
+        "backgroundColor": "#141414",  # Background color
+        "textColor": "#333333",  # Text color
+        "font": "sans serif",  # Font family
+        "fontColor": "#000000",  # Font color
+        "primaryColor": "#008080",  # Primary color for buttons, etc.
+        "secondaryBackgroundColor": "#ffffff",  # Secondary background color
+        # Add more custom theme settings as needed
+    }
+    # Apply the theme settings
+    st.set_page_config(**theme_config)
+
+# Call the set_theme() function to apply the theme
+    set_theme()
+
     if page_selection == "Solution Overview":
         st.title("Solution Overview")
         st.image("resources/imgs/winner.jpg")
@@ -109,7 +128,10 @@ def main():
     # You may want to add more sections here for aspects such as an EDA,
     # or to provide your business pitch.
 
-    if page_selection == "Info":
+    if page_selection == "Home":
+        st.title("Welcome to Your Movie Recommender App")
+
+        st.image('resources/imgs/Home.jpg',width = 640)
 
         st.info("🤷‍♂️ Purpose of the app")
 
